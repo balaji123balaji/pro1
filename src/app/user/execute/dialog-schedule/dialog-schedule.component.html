@@ -1,0 +1,29 @@
+<h2 mat-dialog-title>Select_Start_Date:</h2>
+<mat-dialog-content>
+<div class="row">
+<div class="col-md-2"></div>
+<div class="col-md-10">
+  
+        <div class="input-wrapper">
+        <mat-form-field>
+
+          <input [(ngModel)]="start_at_date" matInput placeholder="Select Start Date"
+                 [owlDateTimeTrigger]="dtPicker1" [owlDateTime]="dtPicker1">
+          <owl-date-time #dtPicker1></owl-date-time>
+        </mat-form-field>
+      </div>
+  
+</div>
+<!-- <div class="col-md-2"></div> -->
+</div>
+
+</mat-dialog-content>
+<mat-dialog-actions>
+    
+    <button mat-raised-button mat-button  color="primary" >Execute</button>
+    <button mat-raised-button mat-button [mat-dialog-close]="true" color="primary" (click)="repeatProcess()" >Schedule </button>
+    <button mat-raised-button mat-button  mat-dialog-close color="primary" >Cancel</button>
+  <!-- <button mat-button mat-dialog-close>No</button>
+
+  <button mat-button [mat-dialog-close]="true">Yes</button> -->
+</mat-dialog-actions>

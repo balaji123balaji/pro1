@@ -1,0 +1,13 @@
+<mat-form-field>
+  <mat-select >
+    <mat-option *ngFor="let v of execd" (click)="functiondemo()"  >{{v}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<div *ngIf="nextShow">
+ <mat-form-field>
+    <input matInput />
+ </mat-form-field>
+</div>
+
+

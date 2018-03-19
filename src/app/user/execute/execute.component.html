@@ -1,0 +1,102 @@
+
+ 
+
+
+<br /><br /><br />
+    <div flex fxLayout="row" fxLayout.lt-sm="column" fxLayout.sm="column" fxLayout.gt-sm="column">
+        <div fxFlex="20" ></div>
+        <div fxFlex="80" >
+<!-- outer layout -->
+<div flex fxLayout="row" fxLayout.lt-sm="column">
+    <div fxFlex="10"></div>
+
+<!-- App hide when the array of value <2 -->    
+    <div fxFlex="35" >
+   <div *ngIf="Application_box">
+        <mat-form-field class="form_input">
+                <mat-select placeholder="Application" [(value)]="SL_APP_CD">
+                
+                  <mat-option (click)="getProcessCD()" *ngFor="let app of APP_CD['APP_CD']" [value]="app">{{app}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+   </div>
+   <div *ngIf="Application_label">
+    <label>{{APP_CD['APP_CD']}}</label>
+   </div>
+    </div>
+	
+<!-- 	hide when the array of value <2 -->
+	
+    <div fxFlex="10"></div>
+    <div fxFlex="35" >
+       
+          <div *ngIf="Process_box">
+                <mat-form-field class="form_input">
+                        <mat-select placeholder="Process" [(value)]="SL_PRC_CD" >
+                       
+                          <mat-option [value]="pro" *ngFor="let pro of PRC_CD['PRCS_CD']" (click)="Execute_AP_PR()" >
+                            {{pro}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+          </div>
+          <div *ngIf="Process_label">
+                <label>{{PRC_CD['PRCS_CD']}}</label>
+          </div>
+
+    </div>
+    <div fxFlex="10"></div>
+    </div>
+
+   
+        
+<!-- close outer layout -->
+        </div>
+        <div fxFlex="20" ></div>
+        </div>
+        <hr />
+            <!-- display form auto layout -->
+          
+            <div flex fxLayout="row" fxLayout.lt-sm="column" *ngIf="b==true">
+                
+                <div fxFlex="50" >
+                    <form [formGroup]="myFormData">
+                            <div *ngFor="let pr of Data">
+                                    <mat-form-field style="width:100%;">
+                                      <input matInput [placeholder]="pr.placeholder" [name]="pr.name"
+                                              [value]="pr.value"  [matAutocomplete]="auto" (click)="getDropDownListValue(pr.name)"
+                                      />
+                                      <mat-autocomplete #auto="matAutocomplete">
+                                        <mat-option *ngFor="let item of searchResult" [value]="item">
+                                          {{ item }}
+                                        </mat-option>
+                                      </mat-autocomplete>
+                                    </mat-form-field>
+                               </div>
+                    </form>
+         
+                
+                </div>
+                <div fxFlex="50" ></div>
+                </div>
+                
+      <!-- close auto -->
+
+         <!-- button layout -->
+    <div flex fxLayout="row" fxLayout.lt-sm="column" >
+        <div fxFlex="30" ></div>
+        <div fxFlex="17" >
+                <button mat-raised-button mat-button color="primary" (click)="Execute_Now()">Execute Now</button>
+                </div>
+                <div  fxFlex="6">
+                </div>
+                <div  fxFlex="17">
+                <button mat-raised-button mat-button color="primary" (click)="openEmojiDialog()" >Schedule</button>
+               
+        </div>
+        <div fxFlex="30">
+
+        </div>
+       
+        </div>
+      

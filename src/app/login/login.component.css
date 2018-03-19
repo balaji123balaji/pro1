@@ -1,0 +1,53 @@
+
+#form{
+font-size:20px; 
+
+}
+
+@media  (max-width:2000px){
+    /* lapton ext big desktop */
+    #form{
+      padding:14px;    margin-left:30%;margin-right:30%;
+      margin-top:5%;
+  }
+  }
+  @media (min-width:992px) and (max-width:1199px){
+    /* lapton ext */
+    #form{
+      padding:14px;    margin-left:20%;margin-right:20%;
+      margin-top:5%;
+  }
+  }
+  @media (max-width:992px)and (min-width:400px){
+    /* for tablet */
+    #form{
+      padding:14px;    margin-left:10%;margin-right:10%;
+      margin-top:5%;
+  }}
+  
+  #usr_se{text-align: center;}
+  
+  .example-form {
+      min-width: 150px;
+      max-width: 500px;
+      width: 100%;
+    }
+    
+    .example-full-width {
+      width: 100%;
+    }
+  
+  
+
+
+.sin_in {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    
+  }
+  
+  .email , .pass {
+    width: 100%;
+  }
+  

@@ -1,0 +1,22 @@
+.email , .pass {
+    width: 100%;
+  }
+
+  .logo-img{
+    height: 40px;
+  }
+  .user-logout {
+      margin-top: 17px;padding:4px; 
+  }
+.header_text{
+  font-size:14px;
+  float:right; margin:4px;
+}
+.header_text_r{
+  margin:4px;
+  font-size:14px;
+  float:right;
+  color: #007bff !important;
+  cursor: pointer;
+  font-weight: 600;
+}

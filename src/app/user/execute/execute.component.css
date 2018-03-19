@@ -1,0 +1,8 @@
+.form_input{
+    width:100%;
+}
+
+.disabled_input{
+    padding:10px;border:1px solid slategrey;
+    text-align: center;width: 40%;
+}

@@ -1,0 +1,112 @@
+<div class="container"
+fxLayout
+fxLayout.xs="column"
+fxLayoutAlign="center"
+fxLayoutGap="10px"
+fxLayoutGap.xs="0">
+<div class="item item-4" fxFlex fxFlexOffset="50px" fxFlexOffset.xs="0">
+<mat-card>
+  <mat-card-title>
+      <app-header></app-header>
+  </mat-card-title>
+  <mat-card-content>
+
+<div flex fxLayout="row" fxLayout.lt-sm="column">
+    <div fxFlex="10" > 
+
+    </div>
+    <div fxFlex="35">
+        <mat-form-field style="width:100%;margin-top:7%">
+            <input matInput placeholder="Start At:" [(ngModel)]="start_date"/>
+         </mat-form-field>
+    </div>
+    <div fxFlex="10">
+
+    </div>
+    <div fxFlex="35">
+        <mat-form-field style="width:100%;margin-top:7%">
+            <input [(ngModel)]="End_date" matInput placeholder="End At:"
+            [owlDateTimeTrigger]="dtPicker1" [owlDateTime]="dtPicker1">
+      <owl-date-time #dtPicker1></owl-date-time>
+          </mat-form-field>
+      </div>
+      <div fxFlex="10">
+
+      </div>
+      </div>
+      
+      <div flex fxLayout="row" fxLayout.lt-sm="column" style="margin-top:20px;">
+        <div fxFlex="30" > 
+    
+        </div>
+        <div fxFlex="6">
+          <strong>Repeat After</strong>
+        </div>
+        <div  fxFlex="17">
+          <mat-form-field style="width:100%">
+            <input matInput type="number" placeholder="Repeat After" />
+        </mat-form-field>
+       
+        </div>
+        <div  fxFlex="17">
+          <mat-form-field  style="width:100%">
+            <mat-select placeholder="-Select a Candence">
+              <mat-option value="-Select a Candence">-Select a Candence</mat-option>
+              <mat-option value="Weeks">Weeks</mat-option>
+              <mat-option value="Months">Months</mat-option>
+              <mat-option value="Years">Years</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div  fxFlex="30">
+
+        </div>
+        </div>
+        <div flex fxLayout="row" fxLayout.lt-sm="column" style="margin-top:20px;">
+          <div fxFlex="30" > 
+        
+          </div>
+          <div fxFlex="10">
+            Termination
+          </div>
+          <div fxFlex="30" > 
+            <mat-radio-group>
+              <mat-radio-button value="1">No End Date</mat-radio-button>
+              <mat-radio-button value="2"> End After</mat-radio-button>
+            </mat-radio-group>
+            
+          </div>
+          <div fxFlex="30" > 
+        
+          </div>
+          </div>
+
+
+        <div flex fxLayout="row" fxLayout.lt-sm="column" style="margin-top:20px;">
+          <div fxFlex="30" > 
+        
+          </div>
+          <div fxFlex="17" > 
+            <button mat-raised-button mat-button color="primary" >Submit</button>
+          </div>
+          <div fxFlex="6" > 
+        
+          </div>
+          <div fxFlex="17" > 
+            <button mat-raised-button mat-button  color="primary" >Cancel</button>
+          </div>
+          <div fxFlex="30" > 
+        
+          </div>
+          </div>
+  </mat-card-content>
+<mat-card-actions>
+ 
+  
+</mat-card-actions>
+</mat-card>
+</div> 
+    
+<div class="item item-5" fxFlex="20px"></div>
+</div>
+

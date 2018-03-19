@@ -1,0 +1,82 @@
+<mat-table [dataSource]="myData">
+    <ng-container matColumnDef="PIID">
+        <mat-header-cell *matHeaderCellDef> PIID </mat-header-cell>
+        <mat-cell *matCellDef="let myData"> {{myData.PIID}} </mat-cell>
+      </ng-container>
+    <ng-container matColumnDef="userName">
+            <mat-header-cell *matHeaderCellDef> Type_of_Set_Aside </mat-header-cell>
+            <mat-cell *matCellDef="let myData"> {{myData.Type_of_Set_Aside}} </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="age">
+                <mat-header-cell *matHeaderCellDef> NAICS </mat-header-cell>
+                <mat-cell *matCellDef="let myData"> {{myData.NAICS}} </mat-cell>
+              </ng-container>
+
+              <ng-container matColumnDef="PSC">
+                  <mat-header-cell *matHeaderCellDef> PSC </mat-header-cell>
+                  <mat-cell *matCellDef="let myData"> {{myData.PSC}} </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="Current_Contract_Value">
+                    <mat-header-cell *matHeaderCellDef> Current_Contract_Value </mat-header-cell>
+                    <mat-cell *matCellDef="let myData"> {{myData.Current_Contract_Value}} </mat-cell>
+                  </ng-container>
+                  <ng-container matColumnDef="Ultimate_Contract_Value">
+                      <mat-header-cell *matHeaderCellDef> Ultimate_Contract_Value </mat-header-cell>
+                      <mat-cell *matCellDef="let myData"> {{myData.Ultimate_Contract_Value}} </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="Solicitation_Procedures">
+                        <mat-header-cell *matHeaderCellDef> Solicitation_Procedures </mat-header-cell>
+                        <mat-cell *matCellDef="let myData"> {{myData.Solicitation_Procedures}} </mat-cell>
+                      </ng-container>
+                      <ng-container matColumnDef="Offers_Received">
+                          <mat-header-cell *matHeaderCellDef> Offers_Received </mat-header-cell>
+                          <mat-cell *matCellDef="let myData"> {{myData.Offers_Received}} </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="Business_Size_Selection">
+                            <mat-header-cell *matHeaderCellDef> Business_Size_Selection </mat-header-cell>
+                            <mat-cell *matCellDef="let myData"> {{myData.Business_Size_Selection}} </mat-cell>
+                          </ng-container>
+                          <ng-container matColumnDef="Contracting_Department">
+                              <mat-header-cell *matHeaderCellDef> Contracting_Department </mat-header-cell>
+                              <mat-cell *matCellDef="let myData"> {{myData.Contracting_Department}} </mat-cell>
+                            </ng-container>
+                            <ng-container matColumnDef="Funding_Office">
+                                <mat-header-cell *matHeaderCellDef> Funding_Office </mat-header-cell>
+                                <mat-cell *matCellDef="let myData"> {{myData.Funding_Office}} </mat-cell>
+                              </ng-container>
+                              <ng-container matColumnDef="Major_Command">
+                                  <mat-header-cell *matHeaderCellDef> Major_Command </mat-header-cell>
+                                  <mat-cell *matCellDef="let myData"> {{myData.Major_Command}} </mat-cell>
+                                </ng-container>
+                                <ng-container matColumnDef="Prepared_By">
+                                    <mat-header-cell *matHeaderCellDef> Prepared_By </mat-header-cell>
+                                    <mat-cell *matCellDef="let myData"> {{myData.Prepared_By}} </mat-cell>
+                                  </ng-container>
+                                  <ng-container matColumnDef="Approved_By">
+                                      <mat-header-cell *matHeaderCellDef> Approved_By </mat-header-cell>
+                                      <mat-cell *matCellDef="let myData"> {{myData.Approved_By}} </mat-cell>
+                                    </ng-container>
+                                    <ng-container matColumnDef="Last_Modified_By">
+                                        <mat-header-cell *matHeaderCellDef> Last_Modified_By </mat-header-cell>
+                                        <mat-cell *matCellDef="let myData"> {{myData.Last_Modified_By}} </mat-cell>
+                                      </ng-container>
+                                      <ng-container matColumnDef="Why_Not_Awarded_To_SDB">
+                                          <mat-header-cell *matHeaderCellDef> Why_Not_Awarded_To_SDB </mat-header-cell>
+                                          <mat-cell *matCellDef="let myData"> {{myData.Why_Not_Awarded_To_SDB}} </mat-cell>
+                                        </ng-container>
+                                        <ng-container matColumnDef="Est_Completion_Date">
+                                            <mat-header-cell *matHeaderCellDef> Est_Completion_Date </mat-header-cell>
+                                            <mat-cell *matCellDef="let myData"> {{myData.Est_Completion_Date}} </mat-cell>
+                                          </ng-container>
+                                          <ng-container matColumnDef="Date_Signed">
+                                              <mat-header-cell *matHeaderCellDef> Date_Signed </mat-header-cell>
+                                              <mat-cell *matCellDef="let myData"> {{myData.Date_Signed}} </mat-cell>
+                                            </ng-container>
+                                            <ng-container matColumnDef="Type_of_Contract">
+                                                <mat-header-cell *matHeaderCellDef> Type_of_Contract </mat-header-cell>
+                                                <mat-cell *matCellDef="let myData"> {{myData.Type_of_Contract}} </mat-cell>
+                                              </ng-container>
+
+<mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+<mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></mat-row>
+</mat-table>

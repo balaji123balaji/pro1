@@ -1,0 +1,74 @@
+<div class="row">
+  <div class="col-md-4">
+<mat-form-field class="form_in">
+  <mat-select [(ngModel)]="EXE_TYPE_R">
+    <mat-option (click)="getExecutableCode()" [value]="ex" *ngFor="let ex of EXE_TYPE['EXE_TYP']">{{ex}}</mat-option>
+  </mat-select>
+</mat-form-field><br />
+<mat-form-field  class="form_in">
+  <mat-select [(ngModel)]="EXE_CD_R">
+    <mat-option (click)="getAllExecutable()" [value]="ex" *ngFor="let ex of EXE_CD['EXE_CD']">
+        {{ex}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+  </div>
+  <div class="col-md-4">
+<mat-form-field class="form_in">
+<input matInput placeholder="Executable" value="" [(ngModel)]="F1_EXE_CD" name="Executable" />
+</mat-form-field><br />
+<hr />
+<mat-form-field class="form_in">
+<input matInput placeholder="Input Parameters" [(ngModel)]="F2_EXE" name="Parameters" value="" />
+</mat-form-field><br />
+<hr />
+<mat-form-field class="form_in">
+<input matInput placeholder="Output Parameter" [(ngModel)]="F3_EXE"  value="" name="" />
+</mat-form-field><br />
+<hr />
+<mat-form-field class="form_in">
+  <textarea matInput placeholder="Executable Description" [(ngModel)]="F4_EXE" value="" name="">
+
+  </textarea>
+</mat-form-field>
+  </div>
+<!-- ______________________________________________________________________ -->
+  <div class="col-md-4 row">
+      <div class="col-sm-4">
+              <mat-form-field>
+                <input matInput placeholder="Version" [(ngModel)]="F5_EXE" value="" name="" />
+              </mat-form-field>
+      </div>
+      <div class="col-sm-4">
+          <mat-form-field>
+              <input matInput placeholder="Start Delimiter" [(ngModel)]="F6_EXE" value="" name="" />
+            </mat-form-field>
+        </div>
+        <div class="col-sm-4">
+            <mat-form-field>
+                <input matInput placeholder="End Delimiter" [(ngModel)]="F7_EXE" value="" name="" />
+              </mat-form-field>
+          </div>
+</div>
+</div>
+<br />
+<hr />
+<div class="row">
+
+<div class="col-md-7">
+  <div class="row">
+<div class="col-md-2">
+    <button type="submit" mat-raised-button color="primary"  >Data Load</button>
+</div>
+<div class="col-md-2">
+    <button type="submit" mat-raised-button color="primary"  >Undefine</button>
+  </div>
+  <div class="col-md-2">
+      <button type="submit" mat-raised-button color="primary" >Define</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<br />
+<br /><br />

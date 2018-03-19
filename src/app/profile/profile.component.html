@@ -1,0 +1,30 @@
+
+
+
+<div flex fxLayout="row" fxLayout.lt-sm="column">
+  <div fxFlex="10" ></div>
+  <div fxFlex="80" ><mat-card>
+    <mat-card-title>
+  <app-header></app-header>
+    </mat-card-title>
+    <mat-card-content>
+        <div flex fxLayout="row" fxLayout.lt-sm="column">
+            <div fxFlex="30" ></div>
+            <div fxFlex="40" >
+                <mat-form-field style="width:100%;">
+                    <mat-select [(ngModel)]="optionSelected" placeholder="Choose to manage">
+                      <mat-option (click)="optionSelecteds()" *ngFor="let opt of options" [value]="opt">
+                          {{opt}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+              </div>
+              <div fxFlex="30">
+
+              </div>
+              </div>
+    </mat-card-content>
+  
+  </mat-card></div>
+  <div fxFlex="10" ></div>
+  </div>

@@ -1,0 +1,36 @@
+<div id="body">
+
+<div class="container"
+fxLayout
+fxLayout.xs="column"
+fxLayoutAlign="center"
+fxLayoutGap="10px"
+fxLayoutGap.xs="0">
+<div class="item item-4" fxFlex fxFlexOffset="50px" fxFlexOffset.xs="0">
+    <mat-card style="height:100%;">
+    <mat-card-title>
+  <app-header></app-header>
+    </mat-card-title>
+  
+    <mat-card-content>
+ <mat-tab-group>
+        <mat-tab label="Execute">
+                <!-- Execute.jsp -->
+                <app-execute></app-execute>
+              </mat-tab>
+<mat-tab label="Scheduler">
+    <!-- SchdActn.jsp -->
+    <app-schd-actn></app-schd-actn>
+  </mat-tab>
+  <!-- app-exception-app -->
+  <mat-tab label="Exception">
+      <!-- SchdActn.jsp -->
+     <app-exception-app></app-exception-app>
+    </mat-tab>
+</mat-tab-group>
+    </mat-card-content>
+</mat-card>
+</div> 
+    
+    <div class="item item-5" fxFlex="20px"></div>
+  </div>

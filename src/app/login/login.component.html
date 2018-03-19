@@ -1,0 +1,56 @@
+<div id="body">
+  <div id="form">
+    <div class="loading" [hidden]="loading">
+      <img src="./assets/img/loading.gif" class="load-img" />
+    </div>
+     
+  </div>
+</div>
+
+<div flex fxLayout="row" fxLayout.lt-sm="column">
+  <div fxFlex="30" ></div>
+  <div fxFlex="38" > <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <!-- <span class="text-danger">{{errorMsg}}</span>
+      <span class="text-primary">{{sendMail}}</span> -->
+      <div>
+          {{msg_alert}}
+      </div>
+    </mat-card-header>
+    <mat-card-content>
+<form class="example-form" (ngSubmit)="checkUser(form)" #form="ngForm" >
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Provide your email  id" [(ngModel)]="email" name="email" value="">
+  </mat-form-field>
+<div *ngIf="pass1==true"><mat-form-field class="example-full-width">
+    <input type="password" matInput placeholder="Provide Password that you want to use " [(ngModel)]="pass" name="pass" value="">
+  </mat-form-field>
+  </div><div *ngIf="pass2==true">
+  <mat-form-field class="example-full-width">
+    <input type="password" matInput placeholder="Reset Password " [(ngModel)]="passr" name="passr" value="">
+  </mat-form-field>
+  </div>
+  <!-- <div *ngIf="captcha==true">
+    <re-captcha (resolved)="resolved($event)" siteKey="6LdJcEgUAAAAAFYauRJeV36nAaiYoKhHxHXm0G5T"></re-captcha>
+  </div> -->
+  <mat-form-field class="example-full-width" *ngIf="agcy == false">
+    <input type="text" matInput placeholder="Enter Agency" [(ngModel)]="agency" name="agency" value="">
+  </mat-form-field>
+  <!-- payment option -->
+  <div *ngIf="srcBloc==true">
+      Payment
+  </div>
+ <div *ngIf="logBtn==true">
+  <button type="" mat-raised-button color="primary" >Login or  Sign-up</button>
+ </div>
+ <div *ngIf="rstBnt==true">
+  <button type="" mat-raised-button color="primary" >Reset</button>
+ </div>
+  </form>
+</mat-card-content>
+<mat-card-actions>
+</mat-card-actions>
+</mat-card></div>
+  <div fxFlex="30" ></div>
+  </div>

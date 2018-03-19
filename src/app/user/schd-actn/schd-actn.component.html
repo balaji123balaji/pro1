@@ -1,0 +1,58 @@
+
+      <div class="row" style="margin-left:4%;margin-right:4%;margin-top:6%;">
+          <div class="col-md-4">
+              <strong style="text-align: center;width:100%;">Application</strong><br />
+              <mat-form-field class="input_control">
+                <mat-select placeholder="Application" [(ngModel)]="ApplicationCD" (click)="getPrcCode()" name="Application">
+                  <mat-option (click)="getProcessCD()" value="ALL">ALL</mat-option>
+                  <mat-option (click)="getProcessCD()" *ngFor="let app of App_CD_data['APP_CD']" [value]="app">
+                    {{app}}
+                  </mat-option>
+                </mat-select>
+                  </mat-form-field>
+          
+                </div>
+
+          <!-- ___________________________________SELECT PROCESS CD -->
+          <div class="col-md-4">
+              <strong style="text-align: center;width:100%;">Process</strong><br />
+              <mat-form-field class="input_control">
+                    <mat-select placeholder="Process" [(ngModel)]="ProcessCD" name="Process">
+                      <mat-option value="ALL">ALL</mat-option>
+                      <mat-option *ngFor="let prc of proc_CD_data['PRCS_CD']" [value]="prc">
+                        {{prc}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+         
+              <div class="col-md-4">
+                  <strong style="text-align: center;width:100%;">Status</strong><br />
+                  <mat-form-field class="input_control">
+                    <mat-select placeholder="Status" [(ngModel)]="StatusCD" name="Status">
+                          <mat-option value="ALL">ALL</mat-option>
+                          <mat-option value="Scheduled">Scheduled</mat-option>
+                          <mat-option value="Paused">Paused</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                </div>
+      </div>  
+      <button mat-raised-button style="float:right;" (click)="find_process()">Find</button>
+      <!-- table -->        
+<hr />
+<div [innerHTML]="innerTable"></div>
+        <br />
+        <hr />
+      <!-- close table -->
+      <div class="row">
+        <div class="col-md-5"></div>
+        <div class="col-md-5">
+              <button mat-raised-button color="primary">Resume</button>
+  <button mat-raised-button color="accent">Pause</button>
+  <button mat-raised-button color="warn">Kill</button>
+  <br /><br /><br />
+        </div>
+      </div>
+
+    
+  
