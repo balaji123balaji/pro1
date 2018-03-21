@@ -9,8 +9,8 @@ import { StorageSessionService } from '../../storage-session.service';
 
 import { ConfigServiceService } from '../../config-service.service';
 import { DialogScheduleComponent } from './dialog-schedule/dialog-schedule.component';
-import { FieldConfig } from '../../dynamic-form/models/field-config.interface';
-import { DynamicFormComponent } from '../../dynamic-form/containers/dynamic-form/dynamic-form.component';
+//import { FieldConfig } from '../../dynamic-form/models/field-config.interface';
+//import { DynamicFormComponent } from '../../dynamic-form/containers/dynamic-form/dynamic-form.component';
 import {FormArray,FormControl,FormGroup,FormBuilder,Validators} from '@angular/forms';
 import { AppComponent } from '../../app.component';
 import { Injectable } from '@angular/core';
@@ -72,11 +72,13 @@ repeatProcess(){
                          this.APP_CD=res.json();
             //------------get lenght 
                          console.log(this.APP_CD);
+                        
                          if(this.APP_CD['APP_CD'].length==1){
                         //hide the application select box
                         this.SL_APP_CD=this.APP_CD['APP_CD']; 
                         this.Application_box=false;
                         this.Application_label=true;
+                       
                         this.getProcessCD();
       }
         });
@@ -91,6 +93,7 @@ getProcessCD(){
                         this.SL_PRC_CD=this.PRC_CD['PRCS_CD'];
                         this.Process_box=false;
                         this.Process_label=true;
+                      
                         this.Execute_AP_PR();
               }
       });
@@ -111,6 +114,7 @@ Data:any[]=[];
 myFormData;
 searchResult:any[];
 Execute_AP_PR(){
+  
   this.b=true;
             this.https.get(this.apiUrlGet+"V_APP_CD="+this.SL_APP_CD+"&V_PRCS_CD="+this.SL_PRC_CD+"&V_SRC_CD="+this.V_SRC_CD+"&REST_Service=PorcessParameters&Verb=GET").subscribe(
                   res=>{
@@ -118,22 +122,45 @@ Execute_AP_PR(){
                         this.FormData=res.json();
                         this.ParametrValue=this.FormData['PARAM_VAL'];
                         this.ParameterName=this.FormData['PARAM_NM'];
+                        let arr:string;
+                   
                         for(let i=0;i<this.ParametrValue.length;i++){
                             this.Data[i]={
                               type:'input',
                               name:this.ParameterName[i],
                               value:this.ParametrValue[i],
-                              placeholder:this.ParameterName[i]
-                             
+                              placeholder:this.ParameterName[i],
+                            
                             };
-                      
+                          
+                        
                         }
                         
-                        console.log(this.Data);
+                        console.log(this.ParameterName);
                        
                   }
             );  }
+Update_value(v,n){ //v=value and n=paramter name
 
+
+// let body={
+//   V_APP_CD:this.SL_APP_CD,
+//   V_PRCS_CD:this.SL_PRC_CD,
+//   V_SRC_CD:this.StorageSessionService.getSession('agency'),
+//   V_USR_NM:this.StorageSessionService.getSession('email'),
+//   V_PARAM_NM:n,
+//   V_PARAM_VAL:v,
+//   REST_Service:'ProcessParameters',
+//   Verb:'PATCH'
+// }
+let ag=this.StorageSessionService.getSession('agency');
+let ur=this.StorageSessionService.getSession('email');
+    this.http.get("https://enablement.us/rest/E_DB/SP?V_APP_CD="+this.SL_APP_CD+"&V_PRCS_CD="+this.SL_PRC_CD+"&V_SRC_CD="+ag+"&V_USR_NM="+ur+"&V_PARAM_NM="+n+"&V_PARAM_VAL="+v+"&REST_Service=ProcessParameters&Verb=PATCH").subscribe(
+      res=>{
+       
+      }
+    );
+}
 getDropDownListValue(e){
   this.app.loading=true;
   this.searchResult=[];
@@ -147,14 +174,7 @@ getDropDownListValue(e){
                     );
                         
         }
-onFormSubmit() {
-                      console.log(this.myForm.value); // Gives FormArray data
-                      console.log(this.myForm.value); // Gives Complete form data
-                      //Iterate FormArray
-                        for(let i = 0; i < this.myForm.length; i++) {
-                        console.log(this.myForm.at(i).setValue("demo"));
-                        }
-            }
+
   //____________CLOSE APP CODE FUN
 ReturnParameterList(para){
                       alert(para);
@@ -205,7 +225,8 @@ data11='{PIID=[W56JSR14C0050, W9124916F0057, HSHQDC17F0002…280001, 200370001],
 
 ngOnInit() {
     this.getAppCode();
-    this.onFormSubmit();
+    
+   
         console.log(this._BLS("balaji",this.data11));
   }
                                                           _BL(data:string){

@@ -4,7 +4,7 @@ import { ViewChild } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router'
 import { StorageSessionService } from '../../../storage-session.service';
-
+import {HttpClient} from '@angular/common/http';
 @Component({
   selector: 'app-dialog-schedule',
   templateUrl: './dialog-schedule.component.html',
@@ -15,7 +15,9 @@ export class DialogScheduleComponent implements OnInit {
   choosenEmoji: string;
   constructor(public dialogRef: MatDialogRef<DialogScheduleComponent>,
   private route:Router,
-private store:StorageSessionService) { }
+private store:StorageSessionService,
+private StorageSessionService:StorageSessionService,
+private http:HttpClient) { }
  
 
 
@@ -28,6 +30,9 @@ repeatProcess(){
   this.store.setLocatS("pro_start_date",dateFr);
   this.route.navigateByUrl("repeat");
 
+  }
+  Execute(){
+  
   }
   formatAMPM(date) {
     var hours = date.getHours();

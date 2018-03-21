@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,ViewChild} from '@angular/core';
 import { StorageSessionService } from '../../storage-session.service';
-import {MatTableDataSource} from '@angular/material';
+
+import {MatTableDataSource, MatSort} from '@angular/material';
 @Component({
   selector: 'app-report-table',
   templateUrl: './report-table.component.html',
   styleUrls: ['./report-table.component.css']
 })
 export class ReportTableComponent implements OnInit {
-
+  @ViewChild(MatSort) sort: MatSort;
   constructor(private dataStored:StorageSessionService
   ) { }
 Table_of_Data:any[];
@@ -21,10 +22,13 @@ F1:any[];
     this.Table_of_Data=this.dataStored.getCookies('report_table')['RESULT'];
     this.Table_of_Data1=this.dataStored.getCookies('report_table')['LOG_VAL'];
   }
-  // {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  data11='{PIID=[W56JSR14C0050, W9124916F0057, HSHQDC17F0002…280001, 200370001], Country=[USA, USA, USA, USA],balaji=[IND, IND, IND, IND]}';
-
+  dataSource = new MatTableDataSource(this.Table_of_Data4);
+  columnsToDisplay = ['PIID','userName', 'age','PSC','Current_Contract_Value','Ultimate_Contract_Value',
+  'Solicitation_Procedures','Offers_Received','Business_Size_Selection','Contracting_Department',
+'Funding_Office','Major_Command','Prepared_By','Approved_By','Last_Modified_By',
+'Why_Not_Awarded_To_SDB','Est_Completion_Date','Date_Signed','Type_of_Contract'];
   ngOnInit() {
+    this.dataSource.sort = this.sort;
     this.getReportData();
    console.log(this.dataStored.getCookies('report_table')['LOG_VAL']);
    console.log(this._BL(this.Table_of_Data1.toString()));
@@ -100,12 +104,10 @@ for(let i=0;i<=this.F1.length;i++){
         }
 }
 console.log(this.Table_of_Data4);
+
   }
-  columnsToDisplay = ['PIID','userName', 'age','PSC','Current_Contract_Value','Ultimate_Contract_Value',
-  'Solicitation_Procedures','Offers_Received','Business_Size_Selection','Contracting_Department',
-'Funding_Office','Major_Command','Prepared_By','Approved_By','Last_Modified_By',
-'Why_Not_Awarded_To_SDB','Est_Completion_Date','Date_Signed','Type_of_Contract'];
-  myData=this.Table_of_Data4;
+
+ // myData=this.Table_of_Data4;
   
 
 

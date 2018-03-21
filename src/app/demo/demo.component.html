@@ -1,13 +1,10 @@
-<mat-table [dataSource]="myData">
-        <ng-container matColumnDef="userName">
-                <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-                <mat-cell *matCellDef="let myData"> {{myData.name}} </mat-cell>
-              </ng-container>
-              <ng-container matColumnDef="age">
-                    <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-                    <mat-cell *matCellDef="let myData"> {{myData.addr}} </mat-cell>
-                  </ng-container>
+<div *ngFor="let pr of Data">
 
-    <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
-    <mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></mat-row>
-</mat-table>
+
+    <mat-form-field style="width:100%;">
+        <input matInput [placeholder]="pr.placeholder" [name]="pr.name"
+                [value]="pr.value"  
+               
+        />
+       </mat-form-field>
+</div>

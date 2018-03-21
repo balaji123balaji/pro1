@@ -12,7 +12,9 @@ import { Validators } from '@angular/forms';
 })
 export class DemoComponent implements OnInit {
 
+  myForm:FormGroup=new FormGroup({
 
+  });
   constructor(
     private formb:FormBuilder,
     private data:ConfigServiceService
@@ -21,21 +23,21 @@ export class DemoComponent implements OnInit {
  
 
   }
-data1='{PIID=[W56JSR14C0050, W9124916F0057, HSHQDC17F0002…280001, 200370001], Country=[USA, USA, USA, USA]}';
-columnsToDisplay = ['userName', 'age'];
-myData=[{name:'balaji',addr:'wagholi'},
-{name:'balaji',addr:'wagholi'},
-{name:'balaji',addr:'wagholi'},
-{name:'balaji',addr:'wagholi'},
-{name:'balaji',addr:'wagholi'}];
 
-    formData(){
-           
-    }
+  Data:any[]=[];
   ngOnInit() {
-		let d1=this.data1.split('=').join(':');
-console.log(d1)		
+    for(let i=0;i<4;i++){
+      this.Data[i]={
+        type:'input',
+        name:"asds",
+        value:"valueasds",
+        placeholder:"demoasdsd",
       
+      };
+    
+  
+  }
+     console.log(this.Data) ;
   }
 
 }

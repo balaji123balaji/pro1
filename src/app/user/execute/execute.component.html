@@ -60,20 +60,21 @@
             <div flex fxLayout="row" fxLayout.lt-sm="column" *ngIf="b==true">
                 
                 <div fxFlex="50" >
-                    <form [formGroup]="myFormData">
+                   
                             <div *ngFor="let pr of Data">
                                     <mat-form-field style="width:100%;">
                                       <input matInput [placeholder]="pr.placeholder" [name]="pr.name"
                                               [value]="pr.value"  [matAutocomplete]="auto" (click)="getDropDownListValue(pr.name)"
+                                             
                                       />
                                       <mat-autocomplete #auto="matAutocomplete">
-                                        <mat-option *ngFor="let item of searchResult" [value]="item">
+                                        <mat-option (click)="Update_value(item ,pr.placeholder)" *ngFor="let item of searchResult" [value]="item">
                                           {{ item }}
                                         </mat-option>
                                       </mat-autocomplete>
                                     </mat-form-field>
                                </div>
-                    </form>
+                  
          
                 
                 </div>

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
+import {MatIconModule} from '@angular/material/icon';
 import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AngularMaterial } from './Angular.Material';
@@ -25,9 +25,7 @@ import { SchdActnComponent } from './user/schd-actn/schd-actn.component';
 import { ExecuteComponent } from './user/execute/execute.component';
 // import { PracticeComponent } from './practice/practice.component';
 import { ReactiveFormsModule }          from '@angular/forms';
-import { DynamicFormsCoreModule } from "@ng-dynamic-forms/core";
-import { DynamicFormsBootstrapUIModule } from "@ng-dynamic-forms/ui-bootstrap";
-import { DynamicFormModule } from './dynamic-form/dynamic-form.module';
+
 import { DemoComponent } from './demo/demo.component';
 import { ExceptionComponent } from './exception/exception.component';
 import { ExceptionAppComponent } from './user/exception-app/exception-app.component';
@@ -73,11 +71,10 @@ const appRoutes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     AngularMaterial,
-    DynamicFormsCoreModule.forRoot(),
-    DynamicFormModule,
     NgAutoCompleteModule,
     ReactiveFormsModule,
     MatAutocompleteModule,
+    MatIconModule,
     LoadingModule.forRoot({
       animationType: ANIMATION_TYPES.wanderingCubes,
       backdropBackgroundColour: 'rgba(0,0,0,0.1)', 
